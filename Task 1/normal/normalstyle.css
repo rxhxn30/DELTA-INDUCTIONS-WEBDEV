@@ -1,0 +1,50 @@
+body{
+    background-color: blueviolet;
+    font-family: 'Courier New', Courier, monospace;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    background-size: cover;
+}
+
+.heading{
+    margin: 10px;
+    padding:10px;
+    text-align: center;
+    text-decoration: wavy;
+    background-color: blueviolet;
+    font-display: initial;
+} 
+
+.div1{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.div2{
+    width: 40%;  
+}
+
+.button{
+    cursor: pointer;
+    background-color: rgba(10, 1, 1, 0.994);
+    padding:9%;
+    margin:1%;
+}
+
+.score{
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@keyframes tileAnimate {
+    from{
+        background-color: rgba(10, 1, 1, 0.994);
+    }
+
+    to {
+        background-color: white;
+    }
+}

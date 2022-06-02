@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano-Tiles | Hacker</title>
+    <link rel="stylesheet" href="hackerstyle.css">
+</head>
+<body class="body" id="body">
+    <h1 class="heading">HACKER MODE</h1>
+    <div class="div1" id="div1">
+        <div class="div2" id="div2"></div>
+        <script>
+            for(i=0;i<36;i++){
+                div2.innerHTML+=`<button class="button" id="button${i}" onclick="clicked(${i})"></button>`;
+
+            }
+        </script>
+    </div>
+    <div id="score" class="score"></div>
+
+    <div class="timerDisplay">
+        00 : 00 : 00 : 000
+    </div>
+    <div id="startTimer"></div>
+    <div id="stopTimer"></div>
+
+    <script src="hackerscript.js"></script>
+</body>
+</html>

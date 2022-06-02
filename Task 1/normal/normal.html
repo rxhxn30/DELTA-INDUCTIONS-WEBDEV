@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano-Tiles | Normal</title>
+    <link rel="stylesheet" href="normalstyle.css">
+</head>
+<body class="body" id="body">
+    <h1 class="heading">NORMAL MODE</h1>
+    <div class="div1" id="div1">
+        <div class="div2" id="div2"></div>
+        <script>
+        for(i=0;i<16;i++){
+            div2.innerHTML+=`<button class="button" id="button${i}" onclick="clicked(${i})"></button>`;
+        }
+        </script>
+    </div>
+    <div id="score" class="score"></div>
+    <div id="rules"></div>
+    <script src="normalscript.js"></script>
+</body>
+</html>
