@@ -58,6 +58,17 @@ while(i<=35){
 document.getElementById('score').innerHTML=`<h1>LEVEL - ${level}</h1><h1>SCORE - ${level-1}</h1>`;
 
 
+function tilepressSound(){
+    var aud = new Audio("Audio/tilepress.mp3");
+    aud.play();
+}
+
+function gameoverSound(){
+    var aud = new Audio("Audio/gameover.mp3");
+    aud.play();
+}
+
+
 
 function shuffleArray(rArr){
     for(var i=15;i>0;i--){
@@ -74,7 +85,7 @@ div2=document.getElementById('div2');
 function clicked(ind){
     click[click_loop]=ind;
     click_loop+=1;
-
+    tilepressSound();
     //----TIMER----
     if(int!==null){
         clearInterval(int);
@@ -82,6 +93,7 @@ function clicked(ind){
     int = setInterval(displayTimer,10);
     //----TIMER----
 }
+
 function func_loop(level){
     if(level<=16){
         click=[];
@@ -93,7 +105,6 @@ function func_loop(level){
         {
             document.getElementById(`button${ind2}`).style="background-color:white;";
             // document.getElementById(`button${ind2}`).animate= "tileAnimate 2 ";
-            
             setTimeout(func2,1000,ind2)
         }
 
@@ -104,22 +115,20 @@ function func_loop(level){
         setInterval(check,1200*level);
     }
     else{
+        gameoverSound();
         document.getElementById('score').innerHTML="<h1>You have succesfully completed the game <br> reset the page to play again</h1>";
     }
     
 }
-function check()
-{
+function check(){
     let temp=1;
-    for(l=0;l<level;l++)
-    {
-        if(rArr[l]!=click[l])
-        {
+    for(l=0;l<level;l++){
+        if(rArr[l]!=click[l]){
             temp=0;
+            gameoverSound();
         }
     }
-    if(temp==1)
-    {
+    if(temp==1){
         document.getElementById('score').innerHTML=`<h1>LEVEL - ${level+1}</h1><h1>SCORE - ${level}</h1>`;
         timerFlag=1;
         displayTimer();
